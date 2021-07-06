@@ -54,6 +54,10 @@ To use RexReplace from an npm build script:
 > npm install rexreplace --save-dev
 ```
 
+## RE2
+
+If you want to lazy load RE2 you will need to explicitly add it as a dependency. It has issues and I no longer want it as a direct dependency until
+it's post build part can go away.
 
 
 ## Examples
