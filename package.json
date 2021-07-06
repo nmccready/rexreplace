@@ -18,11 +18,11 @@
 		"rexreplace_unmin": "bin/rexreplace.cli.js"
 	},
 	"scripts": {
-		"test": "yarn build && yarn test-cli && yarn test-js",
+		"test": "yarn build-minify && yarn test-cli && yarn test-js",
 		"version": "yarn build-minify",
 		"build": "yarn build-only",
 		"build-only": "tsc src/cli --outDir bin/ES6 -t ES6 && rollup -c",
-		"build-minify": "yarn build && yarn minify",
+		"build-minify": "yarn build && yarn minify && chmod +x ./bin/rexreplace*",
 		"minify": "uglifyjs --compress --mangle -- bin/rexreplace.cli.js > bin/rexreplace.cli.min.js",
 		"prebuild": "rm -fr bin && yarn format",
 		"test-js": "echo todo: async mocha",
@@ -58,6 +58,7 @@
 		"magic-string": "^0.25.7",
 		"mocha": "9.0.0",
 		"prettier": "2.3.1",
+		"re2": "1.16.0",
 		"rollup": "2.51.2",
 		"rollup-plugin-closure-compiler-js": "^1.0.6",
 		"rollup-plugin-filesize": "9.1.1",
